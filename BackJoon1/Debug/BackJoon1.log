@@ -1,3 +1,5 @@
 ﻿  chicken.cpp
+c:\users\songhyeonwook\documents\visual studio 2017\projects\backjoon1\algorithm\backjoon1\chicken.cpp(33): warning C4715: 'chick2': 모든 제어 경로에서 값을 반환하지는 않습니다.
+c:\users\songhyeonwook\documents\visual studio 2017\projects\backjoon1\algorithm\backjoon1\chicken.cpp(18): warning C4715: 'chick': 모든 제어 경로에서 값을 반환하지는 않습니다.
   BackJoon1.vcxproj -> C:\Users\SongHyeonWook\Documents\Visual Studio 2017\Projects\BackJoon1\algorithm\Debug\BackJoon1.exe
   BackJoon1.vcxproj -> C:\Users\SongHyeonWook\Documents\Visual Studio 2017\Projects\BackJoon1\algorithm\Debug\BackJoon1.pdb (Partial PDB)
