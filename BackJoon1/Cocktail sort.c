@@ -2,7 +2,7 @@
 #include <time.h>
 #include <stdlib.h>
 
-#define N 50
+#define N 10000000
 #define TRUE 1
 #define FALSE 0
 int b[N + 1];
@@ -47,9 +47,10 @@ void InsertionSort(int a[], int n)
 }
 void MergeGo(int a[], int l, int m, int r)
 {
+
 	int i = l;
 	int j = m + 1;
-	int k = 1;
+	int k = l;
 	
 	while (i <= m && j <= r)
 	{
@@ -59,7 +60,31 @@ void MergeGo(int a[], int l, int m, int r)
 			k++;
 			i++;
 		}
+		else {
+			b[k] = a[j];
+			k++;j++;
+		}
 	}
+	if (i > m)
+	{
+		for (int p = j;p <= r;p++)
+		{
+			b[k] = a[p];
+			k++;
+		}
+	}
+	else
+		for (int p = i;p <= m;p++)
+		{
+			b[k] = a[p];
+			k++;
+		}
+
+	for (int p = l;p <= r;p++)
+	{
+		a[p] = b[p];
+	}
+	
 }
 void BubbleSort(int a[], int n)
 {
@@ -74,34 +99,51 @@ void BubbleSort(int a[], int n)
 	}
 }
 
-void NatureMergeSort(int a[],int b[], int n)
+void NatureMergeSort(int a[], int n)
 {
 	int i = 1;  //for
-	int j = 1;  //rum count
+	int rumcount = 1;  //rum count
 	int rum[N+1];
-	rum[0] = 1;
+	rum[0] = 0;
 	for (i = 1;i <= N;i++)
 	{
-
-		if (a[i] > a[i + 1])
-		{
-			rum[j] = i;
-			j++;
+		if (i == N) {
+			rum[rumcount] = i;
+			rumcount++;
 		}
-	}
-	for (int i = 1;i <= N;i++)
-		printf("%d ", rum[i]);
+		else if (a[i] > a[i + 1])
+		{
+			rum[rumcount] = i;
+			rumcount++;
+		}
+		
+		
 
-	while (1 < j)
+	}
+	rumcount--;
+	//printf("%d", rumcount);
+	//for (int i = 1;i <= N;i++)
+		//printf("%d ", rum[i]);
+
+	while (1 < rumcount)
 	{
-		int count = (j % 2 == 0) ? j - 1 : j;
 
-		for (i = 1;i <= count;i += 2)
+		for (i = 1;i <= rumcount;i += 2)
 		{
-			MergeGo(a, rum[i - 1], rum[i], rum[i + 1]);
+			MergeGo(a, rum[i - 1]+1, rum[i], rum[i + 1]);
 		}
+		int k = 1;
+
+		for (i = 2;i <= rumcount;i += 2)
+			rum[k++] = rum[i];
+		if ((rumcount % 2) != 0)
+			rum[k] = rum[i - 1];
+		else
+			k--;
+		rumcount = k;
 	}
 
+	
 
 
 
@@ -135,7 +177,7 @@ void CockSort(int a[], int n)
 void MergeSort(int a[], int l, int r)
 {
 	int m;
-	int b[N];//
+	
 	if (r > l)
 	{
 		m = (r + l) / 2;
@@ -217,12 +259,12 @@ int main()
 		//SelectionSort(a, N);
 		//InsertionSort(a, N);
 		//CockSort(a, N);
-		NatureMergeSort(a,b, N);
-
+		NatureMergeSort(a, N);
+		//MergeSort(a, 1, N);
 		//QuickSort(a, 1, N);
 		printf("선택 정렬의 실행 시간 (N=%d) : %.0f \n", N, clock() - start_time);
-		for (i = 1; i <= 100; i++) printf(" %d", a[i]);
-		CheckSort(b, N);
+		/*for (i = 1; i <= N; i++) printf(" %d", a[i]);*/
+		CheckSort(a, N);
 	}
 
 	return 0;
