@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="chicken.cpp">
+    <ClCompile Include="Cocktail sort.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
