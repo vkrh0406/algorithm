@@ -2,7 +2,7 @@
 #include <time.h>
 #include <stdlib.h>
 
-#define N 10000000
+#define N 40000000
 #define TRUE 1
 #define FALSE 0
 int b[N + 1];
@@ -28,6 +28,7 @@ void CheckSort(int a[], int n)
 }
 
 
+
 void MergeGo(int a[], int l, int m, int r)
 {
 
@@ -35,6 +36,7 @@ void MergeGo(int a[], int l, int m, int r)
 	int j = m + 1;
 	int k = l;
 
+	
 	while (i <= m && j <= r)
 	{
 		if (a[i] < a[j])
@@ -65,6 +67,7 @@ void NatureMergeSort(int a[], int n)
 	int run[N + 1];
 	run[0] = 0;
 
+	
 	for (i = 1;i <= N;i++)  // run 만들기
 	{
 		if (i == N) {
@@ -78,7 +81,7 @@ void NatureMergeSort(int a[], int n)
 		}
 
 	}
-
+	int mergecount = 0;
 
 	while (TRUE)  //자연 병합 시작
 	{
@@ -86,6 +89,7 @@ void NatureMergeSort(int a[], int n)
 		for (i = 1;i <= runcount;i += 2)
 		{
 			MergeGo(a, run[i - 1] + 1, run[i], run[i + 1]);
+			mergecount++;
 		}
 		int k = 1; //새로 만들 런 임시 인덱스
 
@@ -97,12 +101,12 @@ void NatureMergeSort(int a[], int n)
 			k--;
 		runcount = k;
 		if (runcount <= 1)
+		{
+			printf("병합 횟수 : %d \n", mergecount);
+			
 			return;
+		}
 	}
-
-
-
-
 
 }
 
@@ -157,14 +161,14 @@ int main()
 	for (int k = 0; k < 1; k++) {
 		
 
-		for (i = 1; i <= N; i++) a[i] = N-i;
+		for (i = 1; i <= N; i++) a[i] = i;
 		start_time = clock();
 
 		//CockSort(a, N);
-		//NatureMergeSort(a, N);
-		MergeSort(a, 1, N);
+		NatureMergeSort(a, N);
+		//MergeSort(a, 1, N);
 
-		printf("병합 정렬의 실행 시간 (N=%d) : %.0f \n", N, clock() - start_time);
+		printf("자연병합 정순 정렬의 실행 시간 (N=%d) : %.0f \n", N, clock() - start_time);
 		/*for (i = 1; i <= N; i++) printf(" %d", a[i]);*/
 		CheckSort(a, N);
 
@@ -175,9 +179,24 @@ int main()
 		NatureMergeSort(a, N);
 		//MergeSort(a, 1, N);
 
-		printf("자연 병합 정렬의 실행 시간 (N=%d) : %.0f \n", N, clock() - start_time);
+		printf("자연병합 역순 정렬의 실행 시간 (N=%d) : %.0f \n", N, clock() - start_time);
 		/*for (i = 1; i <= N; i++) printf(" %d", a[i]);*/
 		CheckSort(a, N);
+
+
+		for (i = 1; i <= N; i++) a[i] = rand();
+		start_time = clock();
+
+		//CockSort(a, N);
+		NatureMergeSort(a, N);
+		//MergeSort(a, 1, N);
+
+		printf("자연병합 랜덤 정렬의 실행 시간 (N=%d) : %.0f \n", N, clock() - start_time);
+		/*for (i = 1; i <= N; i++) printf(" %d", a[i]);*/
+		CheckSort(a, N);
+
+
+		
 	}
 
 	return 0;
