@@ -38,35 +38,22 @@ void MergeGo(int a[], int l, int m, int r)
 	while (i <= m && j <= r)
 	{
 		if (a[i] < a[j])
-		{
-			b[k] = a[i];
-			k++;
-			i++;
-		}
-		else {
-			b[k] = a[j];
-			k++;j++;
-		}
+			b[k++] = a[i++];
+		else 
+			b[k++] = a[j++];
 	}
+
 	if (i > m)
-	{
 		for (int p = j;p <= r;p++)
-		{
-			b[k] = a[p];
-			k++;
-		}
-	}
+			b[k++] = a[p];
 	else
 		for (int p = i;p <= m;p++)
-		{
-			b[k] = a[p];
-			k++;
-		}
+			b[k++] = a[p];
+			
+	
 
 	for (int p = l;p <= r;p++)
-	{
 		a[p] = b[p];
-	}
 
 }
 
@@ -77,11 +64,12 @@ void NatureMergeSort(int a[], int n)
 	int runcount = 1;  //run count
 	int run[N + 1];
 	run[0] = 0;
-	for (i = 1;i <= N;i++)
+
+	for (i = 1;i <= N;i++)  // run 만들기
 	{
 		if (i == N) {
 			run[runcount] = i;
-			runcount++;
+			
 		}
 		else if (a[i] > a[i + 1])
 		{
@@ -89,22 +77,17 @@ void NatureMergeSort(int a[], int n)
 			runcount++;
 		}
 
-
-
 	}
-	runcount--;
-	//printf("%d", runcount);
-	//for (int i = 1;i <= N;i++)
-	//printf("%d ", run[i]);
 
-	while (1 < runcount)
+
+	while (TRUE)  //자연 병합 시작
 	{
 
 		for (i = 1;i <= runcount;i += 2)
 		{
 			MergeGo(a, run[i - 1] + 1, run[i], run[i + 1]);
 		}
-		int k = 1;
+		int k = 1; //새로 만들 런 임시 인덱스
 
 		for (i = 2;i <= runcount;i += 2)
 			run[k++] = run[i];
@@ -113,6 +96,8 @@ void NatureMergeSort(int a[], int n)
 		else
 			k--;
 		runcount = k;
+		if (runcount <= 1)
+			return;
 	}
 
 
@@ -169,19 +154,28 @@ int main()
 	a[0] = -1;
 	srand(time(NULL));
 
-	for (int k = 0; k < 2; k++) {
-		for (i = 1; i <= N; i++) a[i] = rand();
+	for (int k = 0; k < 1; k++) {
+		
 
-
+		for (i = 1; i <= N; i++) a[i] = N-i;
 		start_time = clock();
-		//BubbleSort(a, N);
-		//SelectionSort(a, N);
-		//InsertionSort(a, N);
+
+		//CockSort(a, N);
+		//NatureMergeSort(a, N);
+		MergeSort(a, 1, N);
+
+		printf("병합 정렬의 실행 시간 (N=%d) : %.0f \n", N, clock() - start_time);
+		/*for (i = 1; i <= N; i++) printf(" %d", a[i]);*/
+		CheckSort(a, N);
+
+		for (i = 1; i <= N; i++) a[i] = N-i;
+		start_time = clock();
+
 		//CockSort(a, N);
 		NatureMergeSort(a, N);
 		//MergeSort(a, 1, N);
-		//QuickSort(a, 1, N);
-		printf("선택 정렬의 실행 시간 (N=%d) : %.0f \n", N, clock() - start_time);
+
+		printf("자연 병합 정렬의 실행 시간 (N=%d) : %.0f \n", N, clock() - start_time);
 		/*for (i = 1; i <= N; i++) printf(" %d", a[i]);*/
 		CheckSort(a, N);
 	}

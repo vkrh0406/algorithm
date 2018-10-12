@@ -19,7 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Cocktail sort.c">
+    <ClCompile Include="Cocktail and naturalmerge.c">
       <SubType>
       </SubType>
     </ClCompile>
