@@ -2,7 +2,7 @@
 #include <time.h>
 #include <stdlib.h>
 
-#define N 10000000
+#define N 10000001
 #define TRUE 1
 #define FALSE 0
 int b[N + 1];
@@ -102,45 +102,45 @@ void BubbleSort(int a[], int n)
 void NatureMergeSort(int a[], int n)
 {
 	int i = 1;  //for
-	int rumcount = 1;  //rum count
-	int rum[N+1];
-	rum[0] = 0;
+	int runcount = 1;  //run count
+	int run[N+1];
+	run[0] = 0;
 	for (i = 1;i <= N;i++)
 	{
 		if (i == N) {
-			rum[rumcount] = i;
-			rumcount++;
+			run[runcount] = i;
+			runcount++;
 		}
 		else if (a[i] > a[i + 1])
 		{
-			rum[rumcount] = i;
-			rumcount++;
+			run[runcount] = i;
+			runcount++;
 		}
 		
 		
 
 	}
-	rumcount--;
-	//printf("%d", rumcount);
+	runcount--;
+	//printf("%d", runcount);
 	//for (int i = 1;i <= N;i++)
-		//printf("%d ", rum[i]);
+		//printf("%d ", run[i]);
 
-	while (1 < rumcount)
+	while (1 < runcount)
 	{
 
-		for (i = 1;i <= rumcount;i += 2)
+		for (i = 1;i <= runcount;i += 2)
 		{
-			MergeGo(a, rum[i - 1]+1, rum[i], rum[i + 1]);
+			MergeGo(a, run[i - 1]+1, run[i], run[i + 1]);
 		}
 		int k = 1;
 
-		for (i = 2;i <= rumcount;i += 2)
-			rum[k++] = rum[i];
-		if ((rumcount % 2) != 0)
-			rum[k] = rum[i - 1];
+		for (i = 2;i <= runcount;i += 2)
+			run[k++] = run[i];
+		if ((runcount % 2) != 0)
+			run[k] = run[i - 1];
 		else
 			k--;
-		rumcount = k;
+		runcount = k;
 	}
 
 	
