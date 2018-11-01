@@ -2,7 +2,7 @@
 #include <time.h>
 #include <stdlib.h>
 
-#define N 40000000
+#define N 10000000
 #define TRUE 1
 #define FALSE 0
 int b[N + 1];

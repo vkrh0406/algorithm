@@ -19,7 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Cocktail and naturalmerge.c">
+    <ClCompile Include="자연합병 퀵정렬 비교과제.c">
       <SubType>
       </SubType>
     </ClCompile>
@@ -84,7 +84,7 @@
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
-      <StackReserveSize>400485760</StackReserveSize>
+      <StackReserveSize>99999999</StackReserveSize>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">

@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Cocktail and naturalmerge.c">
+    <ClCompile Include="자연합병 퀵정렬 비교과제.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
