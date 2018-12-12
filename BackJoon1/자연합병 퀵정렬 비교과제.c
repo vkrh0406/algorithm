@@ -6,7 +6,7 @@
 #define FALSE 0
 
 #define N 100000
-#define M 20
+int M = 20;
 int b[N + 1];
 
 
@@ -245,35 +245,72 @@ int main()
 
 	for (int k = 0; k < 1; k++) {
 
-		//for (i = 1; i <= N; i++) a[i] = rand();
+		/*for (M = 5;M <= 100;M += 10) {
+			for (i = 1; i <= N; i++) a[i] = i;
+
+			start_time = clock();
+			QuickSort2(a, 1, N);
+
+			printf(" M값에 따른 부분화일 퀵정렬의 실행 시간 (N=%d) (M=%d) : %.0f \n", N, M, clock() - start_time);
+			checksort(a, N);
+		}*/
+
+		//for (i = 1; i <= N; i++) a[i] = N-i;
 
 		//start_time = clock();
-		////QuickSort2(a, 1, N);
-		//HeapSort(a, N);
-		//printf(" 일반적인 퀵정렬의 실행 시간 (N=%d) : %.0f \n", N, clock() - start_time);
+		//QuickSort(a, 1, N);
+		////HeapSort(a, N);
+		//printf(" 일반 퀵정렬의 실행 시간 (N=%d) : %.0f \n", N, clock() - start_time);
 		//checksort(a, N);
+
+		//for (i = 1; i <= N; i++) a[i] = N-i;
+
+		//start_time = clock();
+		//QuickSort2(a, 1, N);
+		////HeapSort(a, N);
+		//printf(" 부분화일 퀵정렬의 실행 시간 (N=%d) : %.0f \n", N, clock() - start_time);
+		//checksort(a, N);
+
+		//for (i = 1; i <= N; i++) a[i] = N-i;
+
+		//start_time = clock();
+		//QuickSort3(a, 1, N);
+		////HeapSort(a, N);
+		//printf(" 중간값 분할 퀵정렬의 실행 시간 (N=%d) : %.0f \n", N, clock() - start_time);
+		//checksort(a, N);
+
+		//for (i = 1; i <= N; i++) a[i] = N-i;
+
+		//start_time = clock();
+		////QuickSort(a, 1, N);
+		//HeapSort(a, N);
+		//printf(" 히프 정렬의 실행 시간 (N=%d) : %.0f \n", N, clock() - start_time);
+		//checksort(a, N);
+		
 		//for (i = 1; i <= 100; i++) printf("%d ", a[i]);
 
 
-		for (i = 1; i <= N; i++) a[i] = rand();
+		for (i = 1; i <= N; i++) a[i] = N-i;
 		start_time = clock();
 
 		//cocksort(a, n);
-		HeapSort(a, N);
-		//mergesort(a, 1, n);
-
-		printf("자연병합 정순 정렬의 실행 시간 (n=%d) : %.0f \n", N, clock() - start_time);
+		//MergeSort(a,1,N);
+		MergeSort(a, 1, N);
+		//QuickSort(a, 1, N);
+		printf("병합 정렬의 실행 시간 (역순배열) (n=%d) : %.0f \n", N, clock() - start_time);
 		/*for (i = 1; i <= n; i++) printf(" %d", a[i]);*/
 		checksort(a, N);
 
-		for (i = 1; i <= N; i++) a[i] = rand();
+		for (i = 1; i <= N; i++) a[i] = N-i;
 		start_time = clock();
 
 		//cocksort(a, n);
-		MergeSort(a,1,N);
-		//mergesort(a, 1, n);
+		NatureMergeSort(a,N);
 
-		printf("자연병합 정순 정렬의 실행 시간 (n=%d) : %.0f \n", N, clock() - start_time);
+		//mergesort(a, 1, n);
+		//QuickSort(a,1, N);
+		//QuickSort(a, 1, N);
+		printf("자연병합 정렬의 실행 시간 (역순배열) (n=%d) : %.0f \n", N, clock() - start_time);
 		/*for (i = 1; i <= n; i++) printf(" %d", a[i]);*/
 		checksort(a, N);
 		

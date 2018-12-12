@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="자연합병 퀵정렬 비교과제.c">
+    <ClCompile Include="huffman.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>

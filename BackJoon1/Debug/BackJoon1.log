@@ -1,4 +1,6 @@
-﻿  자연합병 퀵정렬 비교과제.c
-c:\users\songhyeonwook\documents\visual studio 2017\projects\backjoon1\algorithm\backjoon1\자연합병 퀵정렬 비교과제.c(244): warning C4244: '함수': 'time_t'에서 'unsigned int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+﻿  huffman.cpp
+c:\users\songhyeonwook\documents\visual studio 2017\projects\backjoon1\algorithm\backjoon1\huffman.cpp(45): warning C4101: 'v' :참조되지 않은 지역 변수입니다.
+c:\users\songhyeonwook\documents\visual studio 2017\projects\backjoon1\algorithm\backjoon1\huffman.cpp(120): warning C4554: '>>': 연산자 우선 순위에 오류가 있는지 확인하십시오. 괄호를 사용하여 우선 순위를 명확하게 지정하십시오.
+c:\users\songhyeonwook\documents\visual studio 2017\projects\backjoon1\algorithm\backjoon1\huffman.cpp(121): warning C4554: '>>': 연산자 우선 순위에 오류가 있는지 확인하십시오. 괄호를 사용하여 우선 순위를 명확하게 지정하십시오.
   BackJoon1.vcxproj -> C:\Users\SongHyeonWook\Documents\Visual Studio 2017\Projects\BackJoon1\algorithm\Debug\BackJoon1.exe
   BackJoon1.vcxproj -> C:\Users\SongHyeonWook\Documents\Visual Studio 2017\Projects\BackJoon1\algorithm\Debug\BackJoon1.pdb (Partial PDB)
