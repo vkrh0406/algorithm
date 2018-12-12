@@ -118,7 +118,7 @@ int main()
 	for (j = 0; j <= M; j++) {
 		for (i = len[index(text[j])]; i > 0; i--) {
 			cout << ((code[index(text[j])] >> i - 1) & 1);
-			huffman[k] = ((code[index(text[j])] >> i - 1) & 1);
+			huffman[k++] = ((code[index(text[j])] >> i - 1) & 1);
 			cnt++;
 			if (cnt % 70 == 0) cout << endl;
 		}
@@ -126,19 +126,43 @@ int main()
 	cout << endl;
 
 	
-
-	for (int j =0;j<100;j++)
+	/*for (int i = 0; i < 300;i++)
 	{
-		cout << j<<": "<<dad[j] << endl;
-	}
+		cout << huffman[i] << endl;
+	}*/
+	
 
-	for (int i = 0;i < 300;i++)
+	//-------------------------------------------------------------------------------------
+	//허프만 코드 디코딩 부분
+
+
+	j = 41;
+	for (int i = 0;i < 300;)
 	{
+		
+		if (j <= 26)
+		{
+			
+			char h = indexDecode(j);
+			cout << h;
+			j = 41;
+		}
 		if (huffman[i] == 3)
 			break;
-		else if (huffman[i] == 0)
-		{
 
+		k = j;
+		if (huffman[i++] == 1)
+			k *= -1;
+
+		int tempcount = j;
+		while (true)
+		{
+			tempcount--;
+
+			if (dad[tempcount] == k) {
+				j = tempcount;
+				break;
+			}
 		}
 	}
 

@@ -1,6 +1,5 @@
 ﻿  huffman.cpp
-c:\users\songhyeonwook\documents\visual studio 2017\projects\backjoon1\algorithm\backjoon1\huffman.cpp(45): warning C4101: 'v' :참조되지 않은 지역 변수입니다.
-c:\users\songhyeonwook\documents\visual studio 2017\projects\backjoon1\algorithm\backjoon1\huffman.cpp(120): warning C4554: '>>': 연산자 우선 순위에 오류가 있는지 확인하십시오. 괄호를 사용하여 우선 순위를 명확하게 지정하십시오.
-c:\users\songhyeonwook\documents\visual studio 2017\projects\backjoon1\algorithm\backjoon1\huffman.cpp(121): warning C4554: '>>': 연산자 우선 순위에 오류가 있는지 확인하십시오. 괄호를 사용하여 우선 순위를 명확하게 지정하십시오.
-  BackJoon1.vcxproj -> C:\Users\SongHyeonWook\Documents\Visual Studio 2017\Projects\BackJoon1\algorithm\Debug\BackJoon1.exe
-  BackJoon1.vcxproj -> C:\Users\SongHyeonWook\Documents\Visual Studio 2017\Projects\BackJoon1\algorithm\Debug\BackJoon1.pdb (Partial PDB)
+e:\repo\algorithm\backjoon1\huffman.cpp(45): warning C4101: 'v' :참조되지 않은 지역 변수입니다.
+e:\repo\algorithm\backjoon1\huffman.cpp(120): warning C4554: '>>': 연산자 우선 순위에 오류가 있는지 확인하세요. 괄호를 사용하여 우선 순위를 명확하게 지정하세요.
+e:\repo\algorithm\backjoon1\huffman.cpp(121): warning C4554: '>>': 연산자 우선 순위에 오류가 있는지 확인하세요. 괄호를 사용하여 우선 순위를 명확하게 지정하세요.
+  BackJoon1.vcxproj -> E:\repo\algorithm\Debug\BackJoon1.exe
