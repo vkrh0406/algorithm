@@ -136,25 +136,24 @@ int main()
 	//허프만 코드 디코딩 부분
 
 
-	j = 41;
+	j = 41;  //끝 부분 인덱스
 	for (int i = 0;i < 300;)
 	{
 		
-		if (j <= 26)
+		if (j <= 26)   // 글자 하나 디코딩이 끝났는지 확인
 		{
-			
-			char h = indexDecode(j);
+			char h = indexDecode(j);  //문자로 변환
 			cout << h;
 			j = 41;
 		}
-		if (huffman[i] == 3)
+		if (huffman[i] == 3)    // 디코딩할 허프만 코드가 없을때 끝
 			break;
-
-		k = j;
-		if (huffman[i++] == 1)
+		
+		k = j;  //  허프만 코드에 따라 디코딩 할때 비교하기 위한 변수 dad[tempcount]의 값과 비교 
+		if (huffman[i++] == 1)  //1이면 -를 곱함
 			k *= -1;
 
-		int tempcount = j;
+		int tempcount = j;  //  k값이 있는 dad 변수의 인덱스를 찾기 위한 임시변수
 		while (true)
 		{
 			tempcount--;
